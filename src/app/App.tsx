@@ -1,10 +1,13 @@
+import { BrowserRouter } from 'react-router-dom';
+
 import './App.css';
+import { AppRouter } from './routers/router';
 
 function App() {
   return (
-    <>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-    </>
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
   );
 }
 
