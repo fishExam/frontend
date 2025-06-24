@@ -1,4 +1,5 @@
 import { LoginPage } from '@/pages/login-page';
+import { RegisterPage } from '@/pages/register-page';
 
 import { useRoutes } from 'react-router-dom';
 
@@ -14,7 +15,7 @@ export const AppRouter = () => {
     },
     {
       path: '/register',
-      element: <>register</>,
+      element: <RegisterPage />,
     },
     {
       path: '/profile',

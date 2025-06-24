@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 import { type TUserLoginData, userLoginSchema } from '@/entities/user';
 
-import { Button, Form, FormInput } from '@/shared';
+import { Button, Form, FormInput, PasswordInput } from '@/shared';
 
 export const LoginForm = () => {
   const form = useForm<TUserLoginData>({
@@ -25,7 +25,7 @@ export const LoginForm = () => {
     <Form {...form}>
       <form className="flex flex-col gap-5" onSubmit={handleSubmit(onSubmit)}>
         <FormInput name="username" labelName="Логин" />
-        <FormInput name="password" labelName="Пароль" inputType="password" />
+        <PasswordInput name="password" labelName="Пароль" />
         <Button>Вход</Button>
       </form>
     </Form>

@@ -1,21 +1,21 @@
 import { Link } from 'react-router-dom';
 
-import { LoginForm } from '@/features/login-form';
+import { RegisterForm } from '@/features/register-form';
 
 import { AuthLayout } from '@/widgets/auth-layout';
 
 import { Button } from '@/shared';
 
-export const LoginPage = () => {
+export const RegisterPage = () => {
   return (
     <AuthLayout>
-      <h1>Вход</h1>
-      <LoginForm />
+      <h1>Регистрация</h1>
+      <RegisterForm />
       <p>
-        {'Нет аккаунта? '}
-        <Link to="/register">
+        {'Есть аккаунт? '}
+        <Link to="/login">
           <Button variant="link" className="font-regular p-0 text-md">
-            Создать аккаунт
+            Войти
           </Button>
         </Link>
       </p>
