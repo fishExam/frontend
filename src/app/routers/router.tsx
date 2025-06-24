@@ -1,3 +1,5 @@
+import { LoginPage } from '@/pages/login-page';
+
 import { useRoutes } from 'react-router-dom';
 
 export const AppRouter = () => {
@@ -8,7 +10,7 @@ export const AppRouter = () => {
     },
     {
       path: '/login',
-      element: <>login</>,
+      element: <LoginPage />,
     },
     {
       path: '/register',

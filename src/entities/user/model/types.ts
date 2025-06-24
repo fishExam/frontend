@@ -3,9 +3,9 @@ export type TRole = 'student' | 'teacher';
 export type TUser = {
   id: number;
   role: TRole;
-  userName: string;
+  username: string;
   surname: string;
-  firstName: string;
+  firstname: string;
   patronymic?: string;
   email?: string;
   phone?: string;
