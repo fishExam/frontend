@@ -1,4 +1,5 @@
 import { LoginPage } from '@/pages/login-page';
+import { ProfileLayout } from '@/pages/profile-page';
 import { RegisterPage } from '@/pages/register-page';
 
 import { useRoutes } from 'react-router-dom';
@@ -19,6 +20,7 @@ export const AppRouter = () => {
     },
     {
       path: '/profile',
+      element: <ProfileLayout />,
       children: [
         { path: 'account', element: <>account</> },
         { path: 'homework', element: <>tasks</> },
