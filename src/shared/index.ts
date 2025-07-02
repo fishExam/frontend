@@ -1,5 +1,14 @@
 export { Button, buttonVariants } from './ui/button';
 export {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardContent,
+} from './ui/card';
+export {
   useFormField,
   Form,
   FormItem,
@@ -68,3 +77,6 @@ export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from './ui/t
 export { cn } from './lib/utils';
 
 export { nanoid } from './model/consts';
+
+export { axiosInstance } from './api/axios-instanse';
+export { queryClient } from './api/query-client';

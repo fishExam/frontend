@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { cn } from '@/shared';
+import { Card, cn } from '@/shared';
 
 type AuthLayoutProps = {
   children: ReactNode;
@@ -9,14 +9,14 @@ type AuthLayoutProps = {
 export const AuthLayout = ({ children }: AuthLayoutProps) => {
   return (
     <div className="flex justify-center items-center w-full min-h-screen mx-auto box-border">
-      <div
+      <Card
         className={cn(
-          'flex flex-col justify-start items-center p-10',
-          'w-[80vw] sm:w-[70vw] md:w-[60vw] lg:w-[50vw] max-w-[720px]',
+          'flex flex-col items-center py-16 px-auto gap-6 shadow-0 rounded-[20px]',
+          'w-full max-w-[820px]',
         )}
       >
         {children}
-      </div>
+      </Card>
     </div>
   );
 };

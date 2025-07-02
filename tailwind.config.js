@@ -5,7 +5,8 @@ export const content = ['./src/**/*.{js,ts,jsx,tsx,html}', './index.html'];
 export const theme = {
   extend: {
     fontFamily: {
-      sans: ['Inter', 'sans-serif'],
+      sans: ['Onest', 'sans-serif'],
+      roboto: ['Roboto', 'sans-serif'],
     },
   },
 };
