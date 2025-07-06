@@ -23,9 +23,9 @@ export const LoginForm = () => {
 
   return (
     <Form {...form}>
-      <form className="flex flex-col gap-5" onSubmit={handleSubmit(onSubmit)}>
-        <FormInput name="username" labelName="Логин" />
-        <PasswordInput name="password" labelName="Пароль" />
+      <form className="flex flex-col gap-3 w-full max-w-[340px]" onSubmit={handleSubmit(onSubmit)}>
+        <FormInput name="username" labelName="Логин" placeholder="Логин" />
+        <PasswordInput name="password" labelName="Пароль" placeholder="Пароль" />
         <Button>Вход</Button>
       </form>
     </Form>

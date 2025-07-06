@@ -1,3 +1,7 @@
+import GoogleLogo from './assets/google-logo.webp';
+
+export { GoogleLogo };
+
 export { Button, buttonVariants } from './ui/button';
 export {
   Card,

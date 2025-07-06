@@ -1,30 +1,15 @@
-import { GoogleLogin } from '@react-oauth/google';
-import { useMutation } from '@tanstack/react-query';
+import { Button } from '@/shared';
+import { GoogleLogo } from '@/shared';
 
-import { axiosInstance } from '@/shared';
+import { useLogin } from '../model/hooks';
 
 export const GoogleLoginButton = () => {
-  const mutation = useMutation({
-    mutationFn: (idToken: string) => axiosInstance.post('/auth/google', { token: idToken }),
-    onSuccess: (response) => {
-      console.log('Пользователь авторизован:', response.data);
-    },
-    onError: (error) => {
-      console.error('Ошибка входа через Google:', error);
-    },
-  });
+  const login = useLogin();
 
   return (
-    <GoogleLogin
-      onSuccess={(credentialResponse) => {
-        const idToken = credentialResponse.credential;
-        if (idToken) {
-          mutation.mutate(idToken);
-        }
-      }}
-      onError={() => {
-        console.error('Ошибка при попытке входа через Google');
-      }}
-    />
+    <Button variant="secondary" onClick={() => login()} className="w-full font-medium font-roboto">
+      <img src={GoogleLogo} alt="Google" className="w-4.5 h-4.5" />
+      Войти с Google
+    </Button>
   );
 };

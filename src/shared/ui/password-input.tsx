@@ -10,9 +10,10 @@ import { Input } from './input';
 type PasswordInputProps = {
   name: string;
   labelName: string;
+  placeholder?: string;
 };
 
-export const PasswordInput = ({ name, labelName }: PasswordInputProps) => {
+export const PasswordInput = ({ name, labelName, placeholder }: PasswordInputProps) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
   const { control } = useFormContext();
 
@@ -23,9 +24,9 @@ export const PasswordInput = ({ name, labelName }: PasswordInputProps) => {
       control={control}
       name={name}
       render={({ field, fieldState }) => (
-        <FormItem>
+        <FormItem className="flex flex-col gap-2">
           <FormItem>
-            <FormLabel>{labelName}</FormLabel>
+            <FormLabel className="max-[425px]:text-lg text-xl font-bold">{labelName}</FormLabel>
           </FormItem>
           <FormControl>
             <div className="relative">
@@ -34,6 +35,7 @@ export const PasswordInput = ({ name, labelName }: PasswordInputProps) => {
                 {...field}
                 value={field.value ?? ''}
                 type={!isPasswordVisible ? 'password' : 'text'}
+                placeholder={placeholder}
                 aria-invalid={!!fieldState.error}
               />
               <Button

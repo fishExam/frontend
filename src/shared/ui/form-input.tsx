@@ -17,14 +17,14 @@ export const FormInput = ({ name, labelName, inputType, placeholder }: FormInput
       control={control}
       name={name}
       render={({ field }) => (
-        <FormItem>
+        <FormItem className="flex flex-col gap-2">
           <FormItem>
-            <FormLabel>{labelName}</FormLabel>
+            <FormLabel className="max-[425px]:text-lg text-xl font-bold">{labelName}</FormLabel>
           </FormItem>
           <FormControl>
             <Input {...field} placeholder={placeholder} type={inputType} />
           </FormControl>
-          <FormMessage />
+          <FormMessage className="text-xs" />
         </FormItem>
       )}
     />
