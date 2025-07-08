@@ -6,3 +6,5 @@ export {
   userRegisterSchema,
 } from './model/schemas';
 export { useUserStore } from './model/store';
+
+export { validatePassword } from './lib/utils';

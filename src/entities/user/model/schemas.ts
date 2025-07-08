@@ -1,5 +1,14 @@
 import { z } from 'zod';
 
+import { hasDigit, hasUppercase } from '../lib/utils';
+import { MIN_PASSWORD_LENGTH } from './consts';
+
+export const passwordSchema = z
+  .string()
+  .min(MIN_PASSWORD_LENGTH, 'Минимум 8 символов')
+  .refine(hasUppercase, 'Минимум 1 заглавная буква')
+  .refine(hasDigit, 'Минимум 1 цифра');
+
 export const userLoginSchema = z.object({
   username: z.string().nonempty('Логин обязателен'),
   password: z.string().nonempty('Пароль обязателен'),
@@ -7,27 +16,15 @@ export const userLoginSchema = z.object({
 
 export const userRegisterSchema = () => {
   const allowedRoles = ['Студент', 'Преподаватель'] as const;
-  return z
-    .object({
-      username: z.string().min(1, 'Логин обязателен'),
-      role: z.enum(allowedRoles, {
-        required_error: 'Роль обязательна',
-        invalid_type_error: 'Выберите роль из списка',
-      }),
-      surname: z.string().min(1, 'Фамилия обязательна'),
-      firstname: z.string().min(1, 'Имя обязательно'),
-      patronymic: z.string().optional(),
-      password: z
-        .string()
-        .nonempty('Пароль обязателен')
-        .min(8, 'Пароль слишком короткий')
-        .max(32, 'Пароль слишком длинный'),
-      repeatPassword: z.string(),
-    })
-    .refine((data) => data.password === data.repeatPassword, {
-      message: 'Пароли не совпадают',
-      path: ['repeatPassword'],
-    });
+  return z.object({
+    username: z.string().min(1, 'Логин обязателен'),
+    role: z.enum(allowedRoles, {
+      required_error: 'Роль обязательна',
+      invalid_type_error: 'Выберите роль',
+    }),
+    name: z.string().nonempty('Полное имя обязательно'),
+    password: passwordSchema,
+  });
 };
 
 export type TUserLoginData = z.infer<typeof userLoginSchema>;

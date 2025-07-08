@@ -11,9 +11,15 @@ type PasswordInputProps = {
   name: string;
   labelName: string;
   placeholder?: string;
+  isFormMessageVisible?: boolean;
 };
 
-export const PasswordInput = ({ name, labelName, placeholder }: PasswordInputProps) => {
+export const PasswordInput = ({
+  name,
+  labelName,
+  placeholder,
+  isFormMessageVisible = true,
+}: PasswordInputProps) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
   const { control } = useFormContext();
 
@@ -48,7 +54,7 @@ export const PasswordInput = ({ name, labelName, placeholder }: PasswordInputPro
               </Button>
             </div>
           </FormControl>
-          <FormMessage />
+          {isFormMessageVisible && <FormMessage />}
         </FormItem>
       )}
     />

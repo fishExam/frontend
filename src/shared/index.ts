@@ -1,6 +1,10 @@
 import GoogleLogo from './assets/google-logo.webp';
+import RoleIconLight from './assets/role-icon-light.webp';
+import RoleIconSelected from './assets/role-icon-selected.webp';
 
 export { GoogleLogo };
+export { RoleIconLight };
+export { RoleIconSelected };
 
 export { Button, buttonVariants } from './ui/button';
 export {
@@ -26,6 +30,8 @@ export { Label } from './ui/label';
 export { Input } from './ui/input';
 export { FormInput } from './ui/form-input';
 export { PasswordInput } from './ui/password-input';
+export { Progress } from './ui/progress';
+export { RadioGroup, RadioGroupItem } from './ui/radio-group';
 export {
   Select,
   SelectContent,
