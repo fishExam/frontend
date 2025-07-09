@@ -1,0 +1,1 @@
+export { RegisterPasswordPage } from './ui';

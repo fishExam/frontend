@@ -44,6 +44,7 @@
 
   --color-border: var(--border);
   --color-border-active: var(--border-active);
+  --color-border-primary: var(--border-primary);
 
   --color-input: var(--input);
   --color-input-focus: var(--input-focus);
@@ -101,6 +102,7 @@
 
   --border: oklch(0.1303 0.0573 282.8 / 10%);
   --border-active: oklch(0.4891 0.2569 276.46);
+  --border-primary: oklch(0.7687 0.112 288.69);
 
   --input: oklch(0.1303 0.0573 282.8 / 10%);
   --input-focus: oklch(0.1303 0.0573 282.8);

@@ -1,11 +1,13 @@
 import { Link, Outlet } from 'react-router-dom';
 
+import { steps } from '@/entities/user';
+
 import { AuthLayout } from '@/widgets/auth-layout';
-import { LoginMethods } from '@/widgets/login-methods';
+import { StepProgress } from '@/widgets/step-progress';
 
-import { Button, Separator } from '@/shared';
+import { Button } from '@/shared';
 
-export const RegisterPage = () => {
+export const RegisterLayout = () => {
   return (
     <AuthLayout>
       <div className="flex flex-col items-center gap-2">
@@ -16,13 +18,10 @@ export const RegisterPage = () => {
           Заполните поля снизу для регистрации
         </p>
       </div>
-      <LoginMethods />
-      <div className="flex items-center gap-3 self-center w-full max-w-[213px]">
-        <Separator className="flex-1" />
-        <p className="text-muted-foreground text-xs">Или</p>
-        <Separator className="flex-1" />
+      <div className="flex flex-col items-center gap-3 w-full max-w-[340px]">
+        <Outlet />
+        <StepProgress stepPaths={steps} />
       </div>
-      <Outlet />
       <p className="text-sm text-center">
         {'Уже есть аккаунт? '}
         <Link to="/login">

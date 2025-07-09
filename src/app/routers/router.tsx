@@ -1,14 +1,16 @@
 import { LoginPage } from '@/pages/login-page';
 import { ProfileLayout } from '@/pages/profile-page';
-import { RegisterPage } from '@/pages/register-page';
+import {
+  RegisterLayout,
+  RegisterNamePage,
+  RegisterPasswordPage,
+  RegisterUsernamePage,
+  RoleSelectorPage,
+} from '@/pages/register-page';
 
 import { Navigate, useRoutes } from 'react-router-dom';
 
-import { NameForm } from '@/features/name-form';
-import { PasswordForm } from '@/features/password-form';
 import { RegisterStepGuard } from '@/features/register-step-guard';
-import { RoleSelector } from '@/features/role-selector';
-import { UsernameForm } from '@/features/username-form';
 
 export const AppRouter = () => {
   const mainRoutes = useRoutes([
@@ -22,18 +24,18 @@ export const AppRouter = () => {
     },
     {
       path: '/register',
-      element: <RegisterPage />,
+      element: <RegisterLayout />,
       children: [
         { index: true, element: <Navigate to="name" replace /> },
         {
           path: 'name',
-          element: <NameForm />,
+          element: <RegisterNamePage />,
         },
         {
           path: 'username',
           element: (
             <RegisterStepGuard step="username">
-              <UsernameForm />
+              <RegisterUsernamePage />
             </RegisterStepGuard>
           ),
         },
@@ -41,7 +43,7 @@ export const AppRouter = () => {
           path: 'password',
           element: (
             <RegisterStepGuard step="password">
-              <PasswordForm />
+              <RegisterPasswordPage />
             </RegisterStepGuard>
           ),
         },
@@ -49,7 +51,7 @@ export const AppRouter = () => {
           path: 'role',
           element: (
             <RegisterStepGuard step="role">
-              <RoleSelector />
+              <RoleSelectorPage />
             </RegisterStepGuard>
           ),
         },
