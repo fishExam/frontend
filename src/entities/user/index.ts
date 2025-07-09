@@ -1,4 +1,4 @@
-export type { TUser, TRole } from './model/types';
+export type { TUser, TRole, TRegisterField } from './model/types';
 export {
   type TUserLoginData,
   type TUserRegisterData,
@@ -6,5 +6,8 @@ export {
   userRegisterSchema,
 } from './model/schemas';
 export { useUserStore } from './model/store';
+export { steps } from './model/consts';
 
-export { validatePassword } from './lib/utils';
+export { validatePassword, getTargetStep, computeIsValid } from './lib/utils';
+
+export { RoleCard } from './ui/role-card';

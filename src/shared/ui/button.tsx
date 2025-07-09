@@ -10,7 +10,7 @@ const buttonVariants = cva(
     'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-bold',
     'disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none',
     "[&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0",
-    'outline-none cursor-pointer transition-opacity duration-100 ease-out',
+    'outline-none cursor-pointer transition-opacity duration-300 ease-out',
   ),
   {
     variants: {

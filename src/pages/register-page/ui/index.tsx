@@ -1,6 +1,4 @@
-import { Link } from 'react-router-dom';
-
-import { RegisterForm } from '@/features/register-form';
+import { Link, Outlet } from 'react-router-dom';
 
 import { AuthLayout } from '@/widgets/auth-layout';
 import { LoginMethods } from '@/widgets/login-methods';
@@ -24,7 +22,7 @@ export const RegisterPage = () => {
         <p className="text-muted-foreground text-xs">Или</p>
         <Separator className="flex-1" />
       </div>
-      <RegisterForm />
+      <Outlet />
       <p className="text-sm text-center">
         {'Уже есть аккаунт? '}
         <Link to="/login">
