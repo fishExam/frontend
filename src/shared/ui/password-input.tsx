@@ -1,4 +1,4 @@
-import { Eye } from 'lucide-react';
+import { Eye, EyeOff } from 'lucide-react';
 
 import { useState } from 'react';
 import { useFormContext } from 'react-hook-form';
@@ -50,7 +50,7 @@ export const PasswordInput = ({
                 className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full size-7"
                 onClick={toggleVisibility}
               >
-                <Eye className="size-4" />
+                {isPasswordVisible ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
               </Button>
             </div>
           </FormControl>

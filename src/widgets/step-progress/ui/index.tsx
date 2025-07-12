@@ -13,14 +13,14 @@ export const StepProgress = ({ stepPaths }: StepProgressProps) => {
   return (
     <div className="flex items-center gap-2">
       {currentStep === stepPaths[0] ? (
-        <div className="w-[22px] h-[4px] rounded-[2px] bg-border-primary" />
+        <div className="w-[22px] h-[4px] rounded-[2px] bg-badge-primary" />
       ) : (
         stepPaths.map((step) => (
           <div
             key={step}
             className={cn(
               'w-[22px] h-[4px] rounded-[2px] bg-border',
-              step === currentStep ? 'bg-border-primary' : 'bg-border',
+              step === currentStep ? 'bg-badge-primary' : 'bg-badge-secondary',
             )}
           />
         ))

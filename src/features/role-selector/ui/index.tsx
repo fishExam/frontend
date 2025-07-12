@@ -64,16 +64,16 @@ export const RoleSelector = () => {
             </FormItem>
           )}
         />
-        <div className="flex items-center gap-2.5">
+        <div className="flex flex-wrap items-center justify-center gap-2.5 w-full max-w-[340px]">
           <Button
-            className="max-w-[165px] w-full"
+            className="flex-1 min-w-[120px]"
             variant="secondary"
             type="button"
             onClick={onPrev}
           >
             Назад
           </Button>
-          <Button className="max-w-[165px] w-full" type="submit">
+          <Button className="flex-1 min-w-[120px]" type="submit">
             Создать аккаунт
           </Button>
         </div>
