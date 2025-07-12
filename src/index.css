@@ -55,13 +55,12 @@
   --color-input-focus: var(--input-focus);
   --color-input-primary: var(--input-primary);
 
-  --color-icon-secondary: var(--icon-secondary);
-
   --color-separator-primary: var(--separator-primary);
 
   --color-badge-primary: var(--badge-primary);
   --color-badge-secondary: var(--badge-secondary);
 
+  --color-icon-primary: var(--icon-primary);
   --color-icon-muted: var(--icon-muted);
 
   --color-ring: var(--ring);
@@ -129,6 +128,7 @@
   --badge-primary: oklch(0.7687 0.112 288.69);
   --badge-secondary: oklch(0.1303 0.0573 282.8 / 10%);
 
+  --icon-primary: oklch(0.4891 0.2569 276.46);
   --icon-muted: oklch(0.1303 0.0573 282.8 / 50%);
 
   --ring: oklch(0.708 0 0);
@@ -196,6 +196,7 @@
   --badge-primary: oklch(0.7687 0.112 288.69);
   --badge-secondary: oklch(1 0 0 / 10%);
 
+  --icon-primaty: oklch(0.5532 0.2522 279.49);
   --icon-muted: oklch(1 0 0 / 20%);
 
   --chart-1: oklch(0.488 0.243 264.376);

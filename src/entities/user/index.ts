@@ -11,3 +11,4 @@ export { steps } from './model/consts';
 export { validatePassword, getTargetStep, computeIsValid } from './lib/utils';
 
 export { RoleCard } from './ui/role-card';
+export { UserInfo } from './ui/user-info';

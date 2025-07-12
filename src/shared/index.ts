@@ -30,6 +30,7 @@ export { Label } from './ui/label';
 export { Input } from './ui/input';
 export { FormInput } from './ui/form-input';
 export { PasswordInput } from './ui/password-input';
+export { Popover, PopoverTrigger, PopoverContent, PopoverAnchor } from './ui/popover';
 export { Progress } from './ui/progress';
 export { RadioGroup, RadioGroupItem } from './ui/radio-group';
 export {

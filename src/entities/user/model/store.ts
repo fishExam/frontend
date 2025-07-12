@@ -8,14 +8,13 @@ export const useUserStore = create<TUserStoreState & TUserStoreAction>()(
     (set) => ({
       user: {
         id: 1,
+        name: 'Иванов Иван Иванович',
         username: 'user',
-        firstname: 'user',
-        surname: 'userov',
         role: 'teacher',
       },
       registerData: {},
 
-      setUser: (user) => set((state) => ({ user: { ...state.user, ...user } })),
+      setUser: (user) => set((state) => ({ user: user ? { ...state.user, ...user } : null })),
       setRegisterData: (formData) =>
         set((state) => ({ registerData: { ...(state.registerData || {}), ...formData } })),
 

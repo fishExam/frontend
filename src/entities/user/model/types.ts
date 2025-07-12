@@ -5,10 +5,8 @@ export type TRole = 'student' | 'teacher';
 export type TUser = {
   id: number;
   role: TRole;
+  name: string;
   username: string;
-  surname: string;
-  firstname: string;
-  patronymic?: string;
   email?: string;
   phone?: string;
   birthDate?: Date;
@@ -29,7 +27,7 @@ export type TUserStoreState = {
 };
 
 export type TUserStoreAction = {
-  setUser: (user: TUser) => void;
+  setUser: (user: TUser | null) => void;
   setRegisterData: (formData: Partial<TUserRegisterData>) => void;
   clearRegisterData: () => void;
 };
